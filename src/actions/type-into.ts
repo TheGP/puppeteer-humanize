@@ -40,10 +40,12 @@ export const typeInto = async (
 
   // Click element to allow text input.
   // TODO: Add mouse lib to avoid clicking in the dead center of the element.
+  /*
   await element.hover()
   await waitForTimeout({ min: 100, max: 200 })
   await element.click({ delay: rand({ min: 5, max: 15 }) })
   await waitForTimeout({ min: 200, max: 800 })
+  */
 
   // Type each character in sequence.
   let position: number = 0
