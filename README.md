@@ -15,7 +15,7 @@ import { typeInto } from "./puppeteer-humanize/lib/index.js"
 What currently improved:
 * Mistakes are lower case now instead of upper case
 * Added backspace support (add symbol ⌫ to the string)
-* Removed mouse click, clicks will be available at (Imposter)[https://github.com/TheGP/Imposter] package
+* Removed mouse click, clicks will be available at [Imposter](https://github.com/TheGP/Imposter) package
 
 ## Example
 
