@@ -5,5 +5,6 @@ export const CharacterTypeSchema = z.enum([
   "numeric",
   "punctuation",
   "termination",
-  "whitespace"
+  "whitespace",
+  "backspace"
 ])

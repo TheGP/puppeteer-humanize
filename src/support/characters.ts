@@ -11,7 +11,8 @@ export const charTypes: Record<CharacterType, string[]> = {
   numeric: CHARS.NUMERIC_CHARS,
   whitespace: CHARS.WHITESPACE_CHARS,
   punctuation: CHARS.PUNCTUATION_CHARS,
-  termination: CHARS.TERMINATION_CHARS
+  termination: CHARS.TERMINATION_CHARS,
+  backspace: CHARS.TERMINATION_CHARS
 }
 
 /**
@@ -83,12 +84,21 @@ export const isUpperCase = (input: string): boolean =>
   input.toLowerCase() !== input
 
 /**
+ * Determines if a specified character is backsspace.
+ *
+ * @param {string} input
+ * @return {boolean}
+ */
+export const isBackspace = (input: string): boolean => "⌫" === input
+
+/**
  * Provides a typed map of each character type test function.
  *
  * @type {Map<string, (input: string) => boolean>}
  */
 export const charTypeTests: Map<CharacterType, (input: string) => boolean> =
   new Map([
+    ["backspace", isBackspace],
     ["punctuation", isPunctuation],
     ["termination", isTermination],
     ["whitespace", isWhitespace],

@@ -5,7 +5,6 @@ import {
   detectCharType,
   isCadence,
   keypressDelay,
-  rand,
   Timer,
   waitForTimeout
 } from "../support"
@@ -56,19 +55,25 @@ export const typeInto = async (
     }
 
     // Delay slightly before punctuation.
-    if (charType === "punctuation") {
+    if (charType === "punctuation" || charType === "backspace") {
       await waitForTimeout({ min: 50, max: 100 })
     }
 
     // Type the correct character and add post type delay.
     // TODO: Make capital letters use shift key.
-    await element.type(char, keypressDelay())
+    if (charType === "backspace") {
+      await element.press("Backspace", keypressDelay())
+    } else {
+      await element.type(char, keypressDelay())
+    }
     await waitForTimeout(delays.all)
 
     // Add longer delay after sentence termination or punctuation.
     if (
       charType &&
-      (charType === "punctuation" || charType === "termination") &&
+      (charType === "punctuation" ||
+        charType === "termination" ||
+        charType === "backspace") &&
       Object.keys(delays).includes(charType)
     ) {
       await waitForTimeout(delays[charType])

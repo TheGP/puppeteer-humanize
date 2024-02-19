@@ -24,7 +24,8 @@ export const TypeIntoSchema = z.object({
       space: DelaySchema.default({ chance: 80, min: 10, max: 100 }),
       punctuation: DelaySchema.default({ chance: 70, min: 50, max: 500 }),
       termination: DelaySchema.default({ chance: 95, min: 100, max: 1000 }),
-      cadence: DelaySchema.default({ chance: 100, min: 50, max: 500 })
+      cadence: DelaySchema.default({ chance: 100, min: 50, max: 500 }),
+      backspace: DelaySchema.default({ chance: 70, min: 50, max: 500 })
     })
     .default({})
 })
