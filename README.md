@@ -2,14 +2,20 @@
 
 ![puppeteer-humanize](https://user-images.githubusercontent.com/65471523/127490800-15cba5e4-f94e-4d19-9960-e02c847b9361.jpg)
 
+Human typing function for Puppeteer
 
-Humanizer functions for Puppeteer
+# About this fork
 
-## Install
+This fork consists the improved package, it can be only used for typing:
 
-```shell
-$ npm install @forad/puppeteer-humanize
 ```
+import { typeInto } from "./puppeteer-humanize/lib/index.js"
+```
+
+What currently improved:
+* Mistakes are lower case now instead of upper case
+* Added backspace support (add symbol ⌫ to the string)
+* Removed mouse click, clicks will be available at (Imposter)[https://github.com/TheGP/Imposter] package
 
 ## Example
 
